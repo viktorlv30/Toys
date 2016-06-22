@@ -11,14 +11,14 @@ CREATE TABLE IF NOT EXISTS Users (
 	PRIMARY KEY (id_user)
 );
 
-CREATE TABLE UserType (
+CREATE TABLE IF NOT EXISTS UserType (
 	id_type int(11) NOT NULL AUTO_INCREMENT,
 	type_user varchar(30) NOT NULL UNIQUE,
 	type_code int(2) NOT NULL UNIQUE,
 	PRIMARY KEY (id_type)
 );
 
-CREATE TABLE Email (
+CREATE TABLE IF NOT EXISTS Email (
 	id_email int(11) NOT NULL AUTO_INCREMENT,
 	name_email varchar(30) NOT NULL UNIQUE,
 	email_user_id int(11) NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE Email (
 	PRIMARY KEY (id_email)
 );
 
-CREATE TABLE Phone (
+CREATE TABLE IF NOT EXISTS Phone (
 	id_phone int(11) NOT NULL AUTO_INCREMENT,
 	phone_user_id int(11) NOT NULL,
 	phone_number int(11) NOT NULL UNIQUE,
@@ -34,26 +34,26 @@ CREATE TABLE Phone (
 	PRIMARY KEY (id_phone)
 );
 
-CREATE TABLE PhoneType (
+CREATE TABLE IF NOT EXISTS PhoneType (
 	id_phone_type int(11) NOT NULL AUTO_INCREMENT,
 	name_typePh varchar(30) NOT NULL UNIQUE,
 	PRIMARY KEY (id_phone_type)
 );
 
-CREATE TABLE EmailType (
+CREATE TABLE IF NOT EXISTS EmailType (
 	id_email int(11) NOT NULL AUTO_INCREMENT,
 	type_mail varchar(30) NOT NULL,
 	PRIMARY KEY (id_email)
 );
 
-CREATE TABLE UserAccess (
+CREATE TABLE IF NOT EXISTS UserAccess (
 	access_id int(11) NOT NULL AUTO_INCREMENT,
 	type_access varchar(30) NOT NULL UNIQUE,
 	code_user_type int(2) NOT NULL UNIQUE,
 	PRIMARY KEY (access_id)
 );
 
-CREATE TABLE Goods (
+CREATE TABLE IF NOT EXISTS Goods (
 	id_goods int(11) NOT NULL AUTO_INCREMENT,
 	nameGoods varchar(30) NOT NULL UNIQUE,
 	goods_made_code int(11) NOT NULL,
@@ -64,25 +64,25 @@ CREATE TABLE Goods (
 	PRIMARY KEY (id_goods)
 );
 
-CREATE TABLE MadeGoods (
+CREATE TABLE IF NOT EXISTS MadeGoods (
 	id_made int(11) NOT NULL AUTO_INCREMENT,
 	regionMade varchar(30) NOT NULL UNIQUE,
 	PRIMARY KEY (id_made)
 );
 
-CREATE TABLE Available (
+CREATE TABLE IF NOT EXISTS Available (
 	id_available int(11) NOT NULL AUTO_INCREMENT,
 	type_available varchar(30) NOT NULL UNIQUE,
 	PRIMARY KEY (id_available)
 );
 
-CREATE TABLE Discount (
+CREATE TABLE IF NOT EXISTS Discount (
 	id_discount int(11) NOT NULL AUTO_INCREMENT,
 	discount_type varchar(30) NOT NULL UNIQUE,
 	PRIMARY KEY (id_discount)
 );
 
-CREATE TABLE OrderGoods (
+CREATE TABLE IF NOT EXISTS OrderGoods (
 	id_order int(11) NOT NULL AUTO_INCREMENT,
 	order_user_id int(11) NOT NULL,
 	order_goods_id int(11) NOT NULL,
@@ -93,25 +93,25 @@ CREATE TABLE OrderGoods (
 	PRIMARY KEY (id_order)
 );
 
-CREATE TABLE StatusPurchase (
+CREATE TABLE IF NOT EXISTS StatusPurchase (
 	id_status int(11) NOT NULL AUTO_INCREMENT,
 	status_name varchar(30) NOT NULL UNIQUE,
 	PRIMARY KEY (id_status)
 );
 
-CREATE TABLE DeliveryType (
+CREATE TABLE IF NOT EXISTS DeliveryType (
 	id_devType int(11) NOT NULL AUTO_INCREMENT,
 	delivery_type varchar(30) NOT NULL UNIQUE,
 	PRIMARY KEY (id_devType)
 );
 
-CREATE TABLE DeliveryStatus (
+CREATE TABLE IF NOT EXISTS DeliveryStatus (
 	id_devStatus int(11) NOT NULL AUTO_INCREMENT,
 	status_deliv varchar(30) NOT NULL UNIQUE,
 	PRIMARY KEY (id_devStatus)
 );
 
-CREATE TABLE Wallet (
+CREATE TABLE IF NOT EXISTS Wallet (
 	id_wallet int(11) NOT NULL AUTO_INCREMENT,
 	money int(11) NOT NULL DEFAULT '0',
 	wall_user_id int(11) NOT NULL,
