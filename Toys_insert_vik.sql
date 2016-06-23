@@ -1,13 +1,16 @@
-/*
-CREATE TABLE IF NOT EXISTS Users (
-	id_user int(11) NOT NULL AUTO_INCREMENT,
-	type_UsCode int(11) NOT NULL,
-	nameUser varchar(30) NOT NULL,
-	surNameUser varchar(30) NOT NULL,
-	passUser varchar(30) NOT NULL,
-	PRIMARY KEY (id_user)
-);
-*/
+
+INSERT INTO Users (type_UsCode, nameUser, surNameUser, passUser)
+	VALUES 
+		('1', 'Viktor', 'Monroe', '123456'),
+		('2', 'Romeo', 'Julietta', '369852'),
+		('3', 'Olexandr', 'Domogarov', '789456'),
+		('1', 'Yuriy', 'Dolgorukiy', '456123'),
+		('2', 'Yuriy', 'Potyomkin', '741852'),
+		('3', 'Vitaliy', 'Klitchko', '111111'),
+		('3', 'Michail', 'Bulgakov', '547896'),
+		('3', 'Arseniy', 'Yacenyuk', '852147'),
+		('3', 'Loshara', 'Konchanuy', '369753');
+		
 
 INSERT INTO UserType (type_user, type_code)
 	VALUES 
@@ -49,30 +52,33 @@ INSERT INTO Phone (phone_user_id, phone_number, type_phone)
 		('4', '0735656741', '2'),
 		('5', '0975553212', '1'),
 		('5', '0509876543', '2'),
-		('5', '0371121232', '3');
+		('5', '0371121232', '3'),
+		('6', '0978521471', '1'),
+		('7', '0958852141', '1'),
+		('8', '0881254878', '1'),
+		('9', '0731254879', '1');
 
-/*
-CREATE TABLE PhoneType (
-	id_phone_type int(11) NOT NULL AUTO_INCREMENT,
-	name_typePh varchar(30) NOT NULL UNIQUE,
-	PRIMARY KEY (id_phone_type)
-);
-*/
-/*
-CREATE TABLE EmailType (
-	id_email int(11) NOT NULL AUTO_INCREMENT,
-	type_mail varchar(30) NOT NULL,
-	PRIMARY KEY (id_email)
-);
-*/
-/*
-CREATE TABLE UserAccess (
-	access_id int(11) NOT NULL AUTO_INCREMENT,
-	type_access varchar(30) NOT NULL UNIQUE,
-	code_user_type int(2) NOT NULL UNIQUE,
-	PRIMARY KEY (access_id)
-);
-*/
+
+INSERT INTO PhoneType (name_typePh)
+	VALUES
+		('Mobile'),
+		('Mobile Private'),
+		('Work');
+		
+
+INSERT INTO EmailType (type_mail)
+	VALUES
+		('Private email'),
+		('Work email'),
+		('Email for spam');
+
+
+INSERT INTO UserAccess (type_access, code_user_type)
+	VALUES
+		('Full access', '1'),
+		('Sell only', '2'),
+		('Buy only', '3');
+		
 
 INSERT INTO Goods (nameGoods, goods_made_code, available_code, discount_code, priceGoods, count_goods)
 	VALUES 
@@ -90,71 +96,78 @@ INSERT INTO Goods (nameGoods, goods_made_code, available_code, discount_code, pr
 		('Makogon',     '2', '2', '2', '75',   '3'),
 		('Makaron',     '3', '1', '2', '44',  '16');
 
-/*
-CREATE TABLE MadeGoods (
-	id_made int(11) NOT NULL AUTO_INCREMENT,
-	regionMade varchar(30) NOT NULL UNIQUE,
-	PRIMARY KEY (id_made)
-);
-*/
-/*
-CREATE TABLE Available (
-	id_available int(11) NOT NULL AUTO_INCREMENT,
-	type_available varchar(30) NOT NULL UNIQUE,
-	PRIMARY KEY (id_available)
-);
-*/
-/*
-CREATE TABLE Discount (
-	id_discount int(11) NOT NULL AUTO_INCREMENT,
-	discount_type varchar(30) NOT NULL UNIQUE,
-	PRIMARY KEY (id_discount)
-);
-*/
+
+INSERT INTO MadeGoods (regionMade)
+	VALUES	
+		('Europe'),
+		('Asia'),
+		('Africa'),
+		('North America'),
+		('South America');
+
+
+INSERT INTO Available (type_available)
+	VALUES
+		('Avaliable'),
+		('Not available'),
+		('In order');
+
+
+INSERT INTO Discount (discount_type)
+	VALUES
+		('Opt'),
+		('Sale'),
+		('No discount');
 
 INSERT INTO OrderGoods (order_user_id, order_goods_id, status_code, delivery_type_code, delivery_status_code, countInOrder)
 	VALUES 
 		('1', '1', '1', '1', '1', '1'),
 		('2', '2', '2', '1', '1', '2'),
-		('3', '3', '1', '1', '2', '1'),
-		('5', '4', '1', '2', '2', '3'),
+		('3', '3', '3', '1', '2', '1'),
+		('5', '4', '4', '2', '2', '3'),
 		('4', '5', '1', '2', '1', '1'),
 		('1', '6', '2', '2', '1', '2'),
-		('2', '7', '1', '3', '1', '1'),
-		('2', '8', '2', '3', '1', '2'),
-		('2', '9', '3', '2', '2', '1'),
+		('2', '7', '3', '3', '4', '1'),
+		('2', '8', '4', '3', '1', '2'),
+		('2', '9', '1', '2', '2', '1'),
 		('1', '10', '1', '1', '2', '2'),
 		('3', '11', '2', '1', '3', '1'),
-		('3', '12', '2', '2', '3', '1'),
+		('3', '12', '4', '2', '3', '1'),
 		('2', '13', '1', '2', '3', '2');
 
-/*
-CREATE TABLE StatusPurchase (
-	id_status int(11) NOT NULL AUTO_INCREMENT,
-	status_name varchar(30) NOT NULL UNIQUE,
-	PRIMARY KEY (id_status)
-);
-*/
-/*
-CREATE TABLE DeliveryType (
-	id_devType int(11) NOT NULL AUTO_INCREMENT,
-	delivery_type varchar(30) NOT NULL UNIQUE,
-	PRIMARY KEY (id_devType)
-);
-*/
-/*
-CREATE TABLE DeliveryStatus (
-	id_devStatus int(11) NOT NULL AUTO_INCREMENT,
-	status_deliv varchar(30) NOT NULL UNIQUE,
-	PRIMARY KEY (id_devStatus)
-);
-*/
-/*
-CREATE TABLE Wallet (
-	id_wallet int(11) NOT NULL AUTO_INCREMENT,
-	money int(11) NOT NULL DEFAULT '0',
-	wall_user_id int(11) NOT NULL,
-	PRIMARY KEY (id_wallet)
-);
-*/
+
+INSERT INTO StatusPurchase (status_name)
+	VALUES
+		('In Cart'),
+		('Reserved'),
+		('Paid'),
+		('Purchased');
+		
+
+INSERT INTO DeliveryType (delivery_type)
+	VALUES 
+		('Self delivery'),
+		('Nova poshta'),
+		('Ukrposhta');
+
+		
+INSERT INTO DeliveryStatus (status_deliv)
+	VALUES	
+		('In the stock'),
+		('Prepeared'),
+		('Sent'),
+		('Delivered');
+		
+
+INSERT INTO Wallet (money, wall_user_id)
+	VALUES
+		('800', '9'),
+		('1800', '8'),
+		('700', '7'),
+		('3500', '6'),
+		('11110', '5'),
+		('100000', '4'),
+		('1200', '3'),
+		('980', '2'),
+		('1450', '1');
 
