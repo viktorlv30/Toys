@@ -125,7 +125,8 @@ CREATE TABLE IF NOT EXISTS UserHistory (
 );
 
 CREATE TABLE IF NOT EXISTS ActiveUsers (
-	name_active VARCHAR(30),
+	id_active INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	login VARCHAR(30),
 	phone_active INT(11),
 	email_active VARCHAR(30),
 	money DECIMAL DEFAULT '0'

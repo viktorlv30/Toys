@@ -8,13 +8,16 @@ END;
 
 
 DELIMITER //
-CREATE TRIGGER insert_after_user_login AFTER INSERT ON Users
+CREATE TRIGGER insert_after_user_login AFTER INSERT ON ActiveUsers
 FOR EACH ROW
 BEGIN
-	INSERT INTO user_history 
+	INSERT INTO UserHistory 
 		VALUES(NEW.login, NEW.money);
 END;
 	
+	
+	
+/*	
 CREATE TABLE user_pass (
 	login VARCHAR(30),
 	family VARCHAR(30),
@@ -35,6 +38,7 @@ END;
 
 /*LEFT('abcdef', 1);*/
 
+/*
 INSERT INTO user_pass
 	VALUES ('admin', 'admin', 'vasja', 'petrovich', '1111', '200');
 

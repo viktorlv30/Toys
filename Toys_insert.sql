@@ -171,3 +171,7 @@ INSERT INTO Wallet (id_wallet, money, wall_user_id)
 		('7', '11000', '7'),
 		('8', '12000', '8'),
 		('9', '13000', '9');
+
+INSERT INTO ActiveUsers (login, phone_active, email_active, money)
+	VALUES 
+		('Vasya', '0978484841', 'sobaka@yandex.ru', '5000');
