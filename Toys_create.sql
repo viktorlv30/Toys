@@ -1,3 +1,4 @@
+DROP DATABASE TOYS;
 CREATE DATABASE IF NOT EXISTS TOYS;
 
 USE TOYS;
@@ -7,7 +8,7 @@ CREATE TABLE IF NOT EXISTS Users (
 	type_UsCode int(11) NOT NULL,
 	nameUser varchar(30) NOT NULL,
 	surNameUser varchar(30) NOT NULL,
-	passUser varchar(30) NOT NULL,
+	passUser varchar(80) NOT NULL,
 	PRIMARY KEY (id_user)
 );
 
@@ -116,6 +117,18 @@ CREATE TABLE IF NOT EXISTS Wallet (
 	money int(11) NOT NULL DEFAULT '0',
 	wall_user_id int(11) NOT NULL,
 	PRIMARY KEY (id_wallet)
+);
+
+CREATE TABLE IF NOT EXISTS UserHistory (
+	login VARCHAR(30),
+	money DECIMAL DEFAULT '0'
+);
+
+CREATE TABLE IF NOT EXISTS ActiveUsers (
+	name_active VARCHAR(30),
+	phone_active INT(11),
+	email_active VARCHAR(30),
+	money DECIMAL DEFAULT '0'
 );
 
 

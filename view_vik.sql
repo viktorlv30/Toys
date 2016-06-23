@@ -21,13 +21,14 @@ CREATE OR REPLACE VIEW Stuff AS
 		typeUs.type_user AS Position,
 		Ac.type_access AS Permission,
 		E.name_email AS "Work's mail",
-		P.phone_number AS "Mobile phone"
+		P.phone_number AS "Mobile phone",
+		Us.passUser AS PASSW
 		FROM Users AS Us
 			LEFT JOIN UserType AS typeUs ON Us.type_UsCode = typeUs.type_code
 			LEFT JOIN UserAccess AS Ac ON typeUs.type_code = Ac.code_user_type
 			LEFT JOIN Email As E ON Us.id_user = E.email_user_id
 			LEFT JOIN Phone AS P ON Us.id_user = P.phone_user_id
-		WHERE Us.type_UsCode < 3 AND E.email_type = 1 AND P.type_phone = 1;
+	WHERE Us.type_UsCode < 3 AND E.email_type = 1 AND P.type_phone = 1;
 		
 	
 CREATE TABLE IF NOT EXISTS Wallet (
