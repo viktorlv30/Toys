@@ -1,0 +1,41 @@
+CREATE TABLE IF NOT EXISTS UserAccess(
+	access_id INT(11) NOT NULL ,
+	type_access VARCHAR(30) DEFAULT NULL,
+	code_user_type INT(2) PRIMARY KEY
+);
+
+CREATE TABLE IF NOT EXISTS Wallet(
+	id_wallet INT(11) PRIMARY KEY,
+	money INT(11) DEFAULT NULL,
+	user_id INT (11)
+);
+
+CREATE TABLE IF NOT EXISTS Discount(
+	id_discount INT(11) PRIMARY KEY,
+	discount_type VARCHAR (30)
+);
+
+CREATE TABLE IF NOT EXISTS EmailType(
+	id_email INT(11) PRIMARY KEY,
+	type_mail VARCHAR (30)
+);
+
+CREATE TABLE IF NOT EXISTS PhoneType(
+	id_phone_type INT(11) PRIMARY KEY,
+	name_type VARCHAR (30)
+);
+
+CREATE TABLE IF NOT EXISTS StatusPurchase(
+	id_status INT(11) PRIMARY KEY,
+	status_name VARCHAR (30)
+);
+
+CREATE TABLE IF NOT EXISTS DeliveryType(
+	id_devType INT(11) PRIMARY KEY,
+	delivery_type VARCHAR (30)
+);
+
+CREATE TABLE IF NOT EXISTS DeliveryStatus(
+	id_devStatus INT(11) PRIMARY KEY,
+	status VARCHAR (30)
+);
