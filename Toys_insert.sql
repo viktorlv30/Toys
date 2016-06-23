@@ -22,13 +22,13 @@ INSERT INTO UserType (type_user, type_code)
 INSERT INTO Email (name_email, email_user_id, email_type)
 	VALUES 
 		('sobaka@mail.com', '1', '1'),
-		('korobka@gmail.com', '1', '2'),
+		('korobka@gmail.com', '6', '2'),
 		('kvadratik@gmail.com', '1', '3'),
 		('maska@gmail.com', '2', '1'),
-		('kolona@gmail.com', '2', '2'),
+		('kolona@gmail.com', '7', '2'),
 		('blonda@gmail.com', '2', '3'),
 		('smart@gmail.com', '3', '1'),
-		('stol@gmail.com', '3', '2'),
+		('stol@gmail.com', '8', '2'),
 		('mushka@gmail.com', '3', '3'),
 		('tryba@gmail.com', '4', '1'),
 		('rychka@gmail.com', '4', '2'),
