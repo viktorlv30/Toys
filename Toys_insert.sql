@@ -59,25 +59,25 @@ INSERT INTO Phone (phone_user_id, phone_number, type_phone)
 		('9', '0731254879', '1');
 
 
-INSERT INTO PhoneType (name_typePh)
+INSERT INTO PhoneType (id_phone_type, name_typePh)
 	VALUES
-		('Mobile'),
-		('Mobile Private'),
-		('Work');
+		('1', 'working mobile'),
+		('2', 'private mobile'),
+		('3', 'stacionar');
 		
 
-INSERT INTO EmailType (type_mail)
-	VALUES
-		('Private email'),
-		('Work email'),
-		('Email for spam');
+INSERT INTO EmailType (id_email, type_mail)
+	VALUES 
+		('1', 'formal'),
+		('2', 'unformal'),
+		('3', 'for spam');;
 
 
 INSERT INTO UserAccess (type_access, code_user_type)
-	VALUES
-		('Full access', '1'),
-		('Sell only', '2'),
-		('Buy only', '3');
+	VALUES 
+		('full access', '1'),
+		('aceess to buy&sell', '2'),
+		('only to buy', '3');
 		
 
 INSERT INTO Goods (nameGoods, goods_made_code, available_code, discount_code, priceGoods, count_goods)
@@ -113,11 +113,13 @@ INSERT INTO Available (type_available)
 		('In order');
 
 
-INSERT INTO Discount (discount_type)
-	VALUES
-		('Opt'),
-		('Sale'),
-		('No discount');
+INSERT INTO Discount (id_discount , discount_type)
+	VALUES 
+		('1', '3-rd buying-10%'),
+		('2', '5-th buying-15%'),
+		('3', '10-rd buying-20%'),
+		('4', '20-rd buying-50%');
+		
 
 INSERT INTO OrderGoods (order_user_id, order_goods_id, status_code, delivery_type_code, delivery_status_code, countInOrder)
 	VALUES 
@@ -136,38 +138,36 @@ INSERT INTO OrderGoods (order_user_id, order_goods_id, status_code, delivery_typ
 		('2', '13', '1', '2', '3', '2');
 
 
-INSERT INTO StatusPurchase (status_name)
+INSERT INTO StatusPurchase (id_status, status_name)
 	VALUES
-		('In Cart'),
-		('Reserved'),
-		('Paid'),
-		('Purchased');
+		('1', 'In bascket'),
+		('2', 'Reserved'),
+		('3', 'Paid'),
+		('4', 'Order finished');
 		
 
-INSERT INTO DeliveryType (delivery_type)
+INSERT INTO DeliveryType (id_devType, delivery_type)
+	VALUES
+		('1', 'Nova poshta'),
+		('2', 'Ukrposhta'),
+		('3', 'Selfdelivering(Pickup)');
+
+		
+INSERT INTO DeliveryStatus (id_devStatus, status_deliv)
+	VALUES
+		('1', 'Packed'),
+		('2', 'In delivering process'),
+		('3', 'Awarded');
+		
+
+INSERT INTO Wallet (id_wallet, money, wall_user_id)
 	VALUES 
-		('Self delivery'),
-		('Nova poshta'),
-		('Ukrposhta');
-
-		
-INSERT INTO DeliveryStatus (status_deliv)
-	VALUES	
-		('In the stock'),
-		('Prepeared'),
-		('Sent'),
-		('Delivered');
-		
-
-INSERT INTO Wallet (money, wall_user_id)
-	VALUES
-		('800', '9'),
-		('1800', '8'),
-		('700', '7'),
-		('3500', '6'),
-		('11110', '5'),
-		('100000', '4'),
-		('1200', '3'),
-		('980', '2'),
-		('1450', '1');
-
+		('1', '5000', '1'),
+		('2', '6000', '2'),
+		('3', '7000', '3'),
+		('4', '8000', '4'),
+		('5', '9000', '5'),
+		('6', '10000', '6'),
+		('7', '11000', '7'),
+		('8', '12000', '8'),
+		('9', '13000', '9');

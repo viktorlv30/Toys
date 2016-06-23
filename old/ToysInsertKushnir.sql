@@ -4,7 +4,6 @@ INSERT INTO UserAccess (type_access, code_user_type)
 		('aceess to buy&sell', '2'),
 		('only to buy', '3');
 		
-		
 
 INSERT INTO Wallet (id_wallet, money, wall_user_id)
 	VALUES 
