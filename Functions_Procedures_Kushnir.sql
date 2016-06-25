@@ -1,5 +1,3 @@
-
-
 CREATE PROCEDURE Goods_insert (IN goods_name  VARCHAR(30), IN new_price INT (11))
 BEGIN 
 	INSERT INTO Goods(name, price);
